@@ -3,6 +3,8 @@ import 'package:login/pages/login/login.page.dart';
 
 void main() => runApp(MyApp());
 
+//Apenas um Main para chamar a página de Login e inicializar o App
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -13,29 +13,40 @@ class LoginPage extends StatefulWidget {
 
 //======================================================================================================================
 class _LoginPageState extends State<LoginPage> {
-  var rememberMe = false;
+  var rememberMe = false; //Variável para a caixa do Lembrar Conta
+  final textController1 =
+      TextEditingController(); //Variável para reconhecer o Input do TextField
+  final textController2 =
+      TextEditingController(); //Variável para reconhecer o Input do TextField
 
   @override
   Widget build(BuildContext context) {
-    var scrWid = MediaQuery.of(context).size.width;
-    var scrHei = MediaQuery.of(context).size.height;
+    var scrWid =
+        MediaQuery.of(context).size.width; //Variável que pega a Largura da Tela
+    var scrHei =
+        MediaQuery.of(context).size.height; //Variável que pega a Altura da Tela
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[300],
+        //Barra na parte superior do Aplicativo
+        backgroundColor: Colors.green[300], //Cor da Barra
         title: Text(
+          //Texto que vai na Barra
           "Agrion",
           style: TextStyle(fontSize: 20),
         ),
         actions: <Widget>[
+          //Sessão com Botões na Barra
           IconButton(
+            //Botão para Sair
             icon: Icon(Icons.exit_to_app),
             onPressed: () => exit(0),
           )
         ],
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white, //Cor do Fundo do App
       body: Container(
+        //Corpo do App
         height: scrHei,
         width: scrWid,
         child: Padding(
@@ -50,26 +61,24 @@ class _LoginPageState extends State<LoginPage> {
               ),
               children: <Widget>[
                 /*Logo*/ Center(
+                  //Aqui é onde Inicializa-se a Logo
                   child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.green[300],
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(3),
-                    ),
                     child: SizedBox(
                       child: Image.asset(
                         "assets/my_icon.png",
                       ),
-                      height: (scrWid * 0.3),
-                      width: (scrWid * 0.3),
+                      height: (scrWid * 0.4),
+                      width: (scrWid * 0.4),
                     ),
                   ),
                 ),
                 /*E-Mail*/ Padding(
+                  //Este é o TextField para inserção do E-Mail
                   padding: const EdgeInsets.all(10),
                   child: TextFormField(
+                    //Aqui é o TextField
+                    controller:
+                        textController1, //Aqui é a Variável que recebe o Input do TextField
                     keyboardType: TextInputType.emailAddress,
                     style: new TextStyle(color: Colors.black, fontSize: 20),
                     decoration: InputDecoration(
@@ -79,8 +88,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 /*Senha*/ Padding(
+                  //Este é o TextField para inserção da Senha
                   padding: const EdgeInsets.all(10),
                   child: TextFormField(
+                    //Aqui é o TextField
+                    controller:
+                        textController2, //Aqui é a Variável que recebe o Input do TextField
                     obscureText: true,
                     keyboardType: TextInputType.text,
                     style: new TextStyle(color: Colors.black, fontSize: 20),
@@ -93,19 +106,23 @@ class _LoginPageState extends State<LoginPage> {
                 /*Extras*/ Row(
                   children: <Widget>[
                     /*RememberMe*/ Checkbox(
+                      //Box para o Lembrar-me
                       checkColor: Colors.white,
                       value: rememberMe,
                       onChanged: (value) {
                         setState(() {
-                          rememberMe = value;
+                          //Função que altera a Caixa
+                          rememberMe =
+                              value; //Atribui o valor Booleano para a Variável
                         });
                       },
                     ),
                     /*RememberMeText*/ Text(
-                      "Lembrar de Mim",
+                      "Lembrar de Mim", //Texto do Lembrar-me
                       style: TextStyle(fontSize: 16),
                     ),
                     /*RecovPass*/ Container(
+                      //Botão para acessar Página de Recuperação de Senha
                       padding: EdgeInsets.only(left: 90),
                       height: 40,
                       child: FlatButton(
@@ -113,11 +130,13 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ResetPasswordPage()),
+                                //Função para Acessar a Página
+                                builder: (context) =>
+                                    ResetPasswordPage()), //de Recuperação de Senha
                           );
                         },
                         child: Text(
-                          "Recuperar Senha",
+                          "Recuperar Senha", //Texto da Recuperação de Senha
                           style: TextStyle(fontSize: 15),
                         ),
                       ),
@@ -135,6 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Row(
                     children: <Widget>[
                       /*Login*/ Container(
+                        //Botão de Login #Não Funciona#
                         width: (scrWid * 0.35),
                         height: 50,
                         decoration: BoxDecoration(
@@ -146,14 +166,23 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         child: ButtonTheme(
                           child: RaisedButton(
+                            //O Botão, de fato
                             color: Colors.green[200],
                             onPressed: () {
+                              // if (textController1.text ==
+                              //     'cadmonneto@gmail.com') {
+                              //   //Compara a Variável do E-Mail
+                              //   if (textController2.text == '12345678') {
+                              //     //Compara a Variável da Senha
                               Navigator.push(
+                                //Função para acessar a HomePage
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => HomePage(),
                                 ),
                               );
+                              //   },
+                              // },
                             },
                             child: Text(
                               "Entrar",
@@ -169,6 +198,7 @@ class _LoginPageState extends State<LoginPage> {
                         width: (scrWid * 0.2),
                       ),
                       /*SignUp*/ Container(
+                        //Botão para a Página de Cadastro
                         width: (scrWid * 0.35),
                         height: 50,
                         decoration: BoxDecoration(
@@ -180,12 +210,14 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         child: ButtonTheme(
                           child: RaisedButton(
+                            //O Botão, de fato
                             color: Colors.green[200],
                             onPressed: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => SingUpPage(),
+                                  builder: (context) =>
+                                      SingUpPage(), //Encaminha para a Página de Cadastro
                                 ),
                               );
                             },

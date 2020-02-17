@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "229386015228",
+    "firebase_url": "https://ufslivros-471af.firebaseio.com",
+    "project_id": "ufslivros-471af",
+    "storage_bucket": "ufslivros-471af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229386015228:android:8ac63fa2fef51bc6ece279",
+        "android_client_info": {
+          "package_name": "bata.ta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229386015228-aetcsugu5n5hi6ml086din4dlg07b902.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJvk4BF8Q_7cDCvVMkb92vOZd19XGfyR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229386015228-aetcsugu5n5hi6ml086din4dlg07b902.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
