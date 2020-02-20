@@ -26,6 +26,9 @@ dependencies:
   flutter_masked_text: ^0.8.0
   shared_preferences: ^0.5.3
   carousel_pro: ^1.0.0
+  firebase_auth: ^0.15.4
+  firebase_core: ^0.4.4
+  firebase_core_platform_interface: ^1.0.2
 
 dev_dependencies:
   flutter_test:

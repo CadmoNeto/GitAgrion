@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "408222123234",
+    "firebase_url": "https://agrioncadmo.firebaseio.com",
+    "project_id": "agrioncadmo",
+    "storage_bucket": "agrioncadmo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408222123234:android:816999c5ee775bb9870abb",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408222123234-ui553p679mk9rhjmijro79qi313mgvv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFzjOprclaLfSTj1igZau1HPt412HUnUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408222123234-ui553p679mk9rhjmijro79qi313mgvv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
